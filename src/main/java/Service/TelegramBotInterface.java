@@ -7,6 +7,10 @@ import com.pengrad.telegrambot.response.SendResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**Interface do BOT do Telegram.
+ * @author Eric Castro Santos
+ * @version 1.00
+ */
 public interface TelegramBotInterface {
 
     GetUpdatesResponse recuperarMensagensPendentes(int m);

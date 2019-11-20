@@ -11,6 +11,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**Classe responsavel por recuperar a lista de cidades através de um arquivo json e armazenar em um Map, ficando disponivel na aplicação.
+ * @author Eric Castro Santos
+ * @version 1.00
+ */
 public class CityList {
 
     public static Map<Long, String> listaCidades = new HashMap<Long, String>();

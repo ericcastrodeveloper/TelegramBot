@@ -8,9 +8,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-
 import java.io.IOException;
 
+/**Classe que implementa o serviço de busca de temperatura do openweathermap
+ * @author Eric Castro Santos
+ * @version 1.00
+ */
 public class WeatherServiceImpl implements WeatherService {
 
     private static final String apiKey = "ad908c7e2c3b6239408cb8469fa0c111";

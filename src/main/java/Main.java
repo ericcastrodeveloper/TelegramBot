@@ -7,8 +7,12 @@ import com.pengrad.telegrambot.response.SendResponse;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
+
+/**Classe principal da aplicação onde starta o BOT do Telegram.
+ * @author Eric Castro Santos
+ * @version 1.00
+ */
 public class Main {
 
 
