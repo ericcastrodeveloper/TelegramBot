@@ -4,6 +4,7 @@ import Service.WeatherService;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -32,18 +33,46 @@ public class WeatherServiceImpl implements WeatherService {
         Response response = client.newCall(request).execute();
         String jsonData = response.body().string();
         JSONParser parser = new JSONParser();
+
+        StringBuilder climaTempo = new StringBuilder();
         try {
             JSONObject json = (JSONObject) parser.parse(jsonData);
-            JSONObject jsonMain = (JSONObject) json.get("main");
+            JSONObject jsonTemperature = (JSONObject) json.get("main");
+            JSONArray jsonWeather = (JSONArray) json.get("weather");
 
-            if (jsonMain != null) {
-                Object temperatura = jsonMain.get("temp");
+            if (jsonTemperature != null) {
+                Object temperatura = jsonTemperature.get("temp");
 
-                return temperatura.toString();
+                climaTempo.append(temperatura.toString()).append("º C");
+
+            }
+            if(jsonWeather != null){
+                Object clima = ((JSONObject) jsonWeather.get(0)).get("main");
+                String climaString = clima.toString().toLowerCase();
+
+                if(climaString.contains("cloud")) {
+                    char nuvem = 9729;
+                    climaTempo.append(" "+nuvem);
+                }
+                else
+                    if(climaString.contains("sun")) {
+                        char sol = 9728;
+                        climaTempo.append(" "+sol);
+                    }
+                    else
+                        if(climaString.contains("rain")) {
+                            char chuva = 9928;
+                            climaTempo.append(" "+chuva);
+                        }
+                        else
+                            if(climaString.contains("snow")) {
+                                char snow = 10052;
+                                climaTempo.append(" " + snow);
+                            }
 
             }
 
-            return null;
+            return climaTempo.toString();
 
         } catch (ParseException e) {
             e.printStackTrace();

@@ -1,5 +1,7 @@
+import Service.Impl.WeatherServiceImpl;
 import Service.TelegramBotInterface;
 import Service.Impl.TelegramBotInterfaceImpl;
+import Service.WeatherService;
 import Utils.CityList;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
@@ -49,6 +51,7 @@ public class Main {
                 System.out.println("Mensagem enviada? "+response.isOk());
             }
         }
+
     }
 
 

@@ -26,7 +26,8 @@ import java.util.*;
 public class TelegramBotInterfaceImpl implements TelegramBotInterface {
 
     //Criação do objeto bot com as informações de acesso
-    private static TelegramBot bot = TelegramBotAdapter.build("1042814714:AAGJiLHrPZMy-JGa97ruqnAEGxh1ws0GCFE");
+//    private static TelegramBot bot = TelegramBotAdapter.build("1042814714:AAGJiLHrPZMy-JGa97ruqnAEGxh1ws0GCFE");
+    private static TelegramBot bot = TelegramBotAdapter.build("1018830002:AAFtcWXCGfDc831omIf7fkhJiVh7U9nZT7s");
 
     public GetUpdatesResponse recuperarMensagensPendentes(int m) {
         return bot.execute(new GetUpdates().limit(100).offset(m));
@@ -88,7 +89,7 @@ public class TelegramBotInterfaceImpl implements TelegramBotInterface {
         if(temperatura == null){
             msgResponse = "Cidade não encontrada!";
         }else
-        msgResponse = "Temperatura - "+cidade+": "+temperatura+"º C";
+        msgResponse = "Temperatura - "+cidade+": "+temperatura;
 
         return msgResponse;
     }

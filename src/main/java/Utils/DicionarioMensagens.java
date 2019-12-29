@@ -13,7 +13,7 @@ public class DicionarioMensagens {
 
         Map<String, String> map = new HashMap<>();
         map.put("OLA", "Olá, tudo bem? Eu tenho função de informar temperaturas de cidades, para isso escreva: Temperatura em \"nome da cidade\"");
-        map.put("OI", "Olá, tudo bem?");
+        map.put("OI", "Olá, tudo bem? Eu tenho função de informar temperaturas de cidades, para isso escreva: Temperatura em \"nome da cidade\"");
         map.put("TCHAU", "Tchau! Até Breve!?");
         map.put("ONDE", "Sou do Telegram");
         map.put("PAIS", "Moro na nuvem, país Internet");
